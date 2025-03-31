@@ -3,19 +3,7 @@
 This extension allows you to easily download code artifacts and file structures from Claude AI chats. The updated version now supports downloading files as a ZIP archive.
 
 ## How to Install
-
-1. Download JSZip library:
-   - Go to https://stuk.github.io/jszip/
-   - Download the latest version of JSZip (jszip.min.js)
-   - Save this file to your extension directory
-
-2. Replace existing files with updated versions:
-   - Replace `manifest.json` with the updated version
-   - Replace `popup.html` with the updated version
-   - Replace `popup.js` with the updated version
-   - Replace `content.js` with the updated version
-
-3. Load the extension:
+Load the extension:
    
    **For Chrome:**
    - Open Chrome and go to `chrome://extensions/`
@@ -31,10 +19,20 @@ This extension allows you to easily download code artifacts and file structures 
 
 1. Navigate to Claude AI (claude.ai)
 2. Ask Claude to generate code with file structure (using "# FILE:" markers)
-3. Click the extension icon to open the popup
-4. Click "Scan for Artifacts" to detect files
-5. Use "Download Files" to download each file individually
-6. Use "Download as ZIP" to download all files as a single ZIP archive with the correct file structure
+```
+can I download this files in structure you made?
+
+ok, dont use artifacts, just give me one file, so i could parse it and get that nice sturcture you presented
+
+I download it and parse with my tool
+
+include paths like this
+# FILE: src/backend/database.py(path to the file)
+```
+4. Click the extension icon to open the popup
+5. Click "Scan for Artifacts" to detect files
+6. Use "Download Files" to download each file individually
+7. Use "Download as ZIP" to download all files as a single ZIP archive with the correct file structure
 
 ## Features
 
