@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Artifact Downloader",
+  "version": "1.2",
+  "description": "Download artifacts and file structures from Claude chats",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.anthropic.com/*",
+    "*://*.claude.ai/*"
+  ],
+  "action": {
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    },
+    "default_title": "Claude Artifact Downloader",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.anthropic.com/*", "*://*.claude.ai/*"],
+      "js": ["jszip.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["jszip.min.js"],
+      "matches": ["*://*.anthropic.com/*", "*://*.claude.ai/*"]
+    }
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  }
+}
